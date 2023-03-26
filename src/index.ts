@@ -1,6 +1,12 @@
 import { BaseNode } from "./BaseNode.js";
 import type { Transformer } from "./types.js";
 
+import {
+  markdownParagraphTransformer,
+  markdownTableTransformer,
+  markdownCodeTransformer,
+} from "./transformers/index.js";
+
 function parsePlainTextToNodes(text: string, transformers: Transformer<any>[]) {
   const nodes: BaseNode<unknown>[] = [];
 
@@ -33,5 +39,12 @@ function parsePlainTextToNodes(text: string, transformers: Transformer<any>[]) {
   return nodes;
 }
 
-export { parsePlainTextToNodes, BaseNode };
+export {
+  parsePlainTextToNodes,
+  BaseNode,
+  markdownParagraphTransformer,
+  markdownCodeTransformer,
+  markdownTableTransformer,
+};
+
 export type { Transformer };
