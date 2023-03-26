@@ -1,4 +1,5 @@
 import { BaseNode } from "./BaseNode.js";
+import { markdownParagraphTransformer, markdownTableTransformer, markdownCodeTransformer, } from "./transformers/index.js";
 function parsePlainTextToNodes(text, transformers) {
     const nodes = [];
     function parsePlainTextToNode(text) {
@@ -22,5 +23,5 @@ function parsePlainTextToNodes(text, transformers) {
     parsePlainTextToNode(text);
     return nodes;
 }
-export { parsePlainTextToNodes, BaseNode };
+export { parsePlainTextToNodes, BaseNode, markdownParagraphTransformer, markdownCodeTransformer, markdownTableTransformer, };
 //# sourceMappingURL=index.js.map
