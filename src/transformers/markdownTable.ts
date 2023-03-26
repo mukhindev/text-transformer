@@ -21,7 +21,7 @@ export class MarkdownTableNode extends BaseNode<MarkdownTableNodeState> {
   }
 
   render() {
-    return `<div class="table">TODO: Format to table</div>`;
+    return `<div class="${this.className}">TODO: Format to table</div>`;
   }
 }
 
@@ -30,7 +30,7 @@ export const markdownTableTransformer: Transformer<MarkdownTableNode> = {
     /(\|[^\n]+\|.+\r?\n)((?:\|:?-+:?)+\|.+\r?\n*)((?:\|[^\n]+\|.+\r?\n?)*)?\r?\n*/g,
   node: MarkdownTableNode,
   defineState: (match) => {
-    const [_, header, dividers, body] = match;
+    const [, header, dividers, body] = match;
 
     const headerValues = splitTableRows(header);
     const dividerValues = splitTableRows(dividers);

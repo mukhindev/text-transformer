@@ -5,14 +5,14 @@ export class MarkdownTableNode extends BaseNode {
         this.type = "markdown-table";
     }
     render() {
-        return `<div class="table">TODO: Format to table</div>`;
+        return `<div class="${this.className}">TODO: Format to table</div>`;
     }
 }
 export const markdownTableTransformer = {
     regexp: /(\|[^\n]+\|.+\r?\n)((?:\|:?-+:?)+\|.+\r?\n*)((?:\|[^\n]+\|.+\r?\n?)*)?\r?\n*/g,
     node: MarkdownTableNode,
     defineState: (match) => {
-        const [_, header, dividers, body] = match;
+        const [, header, dividers, body] = match;
         const headerValues = splitTableRows(header);
         const dividerValues = splitTableRows(dividers);
         const bodyValues = splitTableRows(body);

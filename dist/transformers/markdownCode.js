@@ -5,14 +5,14 @@ export class MarkdownCodeNode extends BaseNode {
         this.type = "markdown-code";
     }
     render() {
-        return `<div><pre><code>TODO: Format to code [${this.state.language}]: ${this.state.code}</code></pre></div>`;
+        return `<div class="${this.className}"><pre><code>TODO: Format to code [${this.state.language}]: ${this.state.code}</code></pre></div>`;
     }
 }
 export const markdownCodeTransformer = {
     regexp: /```\s*(.*)\n([\s\S]+)```\n*/g,
     node: MarkdownCodeNode,
     defineState: (match) => {
-        const [_, language, code] = match;
+        const [, language, code] = match;
         return {
             language,
             code,

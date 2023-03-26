@@ -6,7 +6,7 @@ export class MarkdownParagraphNode extends BaseNode {
     }
     render() {
         const content = this.state.content.replace(/\s\s\n/g, "<br/>");
-        return `<div class="paragraph">${content.trim()}</div>`;
+        return `<div class="${this.className}">${content.trim()}</div>`;
     }
 }
 export const markdownParagraphTransformer = {

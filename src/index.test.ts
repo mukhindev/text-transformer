@@ -35,10 +35,10 @@ console.log(answer);
 Last paragraph without newline at the end.`;
 
 const HTML = `\
-<div class="paragraph"># Hello World!</div><div class="paragraph">This is a paragraph.
-This is a continuation of the line. Then there are 2 spaces!<br/>This is the same paragraph, but newline.</div><div class="paragraph">This is a next paragraph.</div><div class="table">TODO: Format to table</div><div class="table">TODO: Format to table</div><div><pre><code>TODO: Format to code [javascript]: const answer = 42;
+<div class="markdown-paragraph"># Hello World!</div><div class="markdown-paragraph">This is a paragraph.
+This is a continuation of the line. Then there are 2 spaces!<br/>This is the same paragraph, but newline.</div><div class="markdown-paragraph">This is a next paragraph.</div><div class="markdown-table">TODO: Format to table</div><div class="markdown-table">TODO: Format to table</div><div class="markdown-code"><pre><code>TODO: Format to code [javascript]: const answer = 42;
 console.log(answer);
-</code></pre></div><div class="paragraph">Last paragraph without newline at the end.</div>`;
+</code></pre></div><div class="markdown-paragraph">Last paragraph without newline at the end.</div>`;
 
 describe("Render", () => {
   it("Markdown", () => {
